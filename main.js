@@ -18,49 +18,6 @@ document.querySelectorAll('.btn__item').forEach(function(tabsBtn){
     });
   });
 
-
-const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 1,
-  loop: true,
-
-  nextButton: '.swiper-button-next',
-  prevButton: '.swiper-button-prev',
-
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true,
-},
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-},
-
-autoplay: {
-  delay: 5000,
-  disableOnInteraction: false,
-},
-
-  speed:1000,
-
-  simulateTouch: true,
-
-  touchRatio: 1,
-
-  touchAngle:45,
-
-  grabCursor: true,
-
- });
-
- new Accordion('.accordion-list', {
-    elementClass: 'accordion',
-    triggerClass: 'accordion__control',
-    panelClass: 'accordion__content',
-    activeClass: 'accordion--active',
- });
-
  let burger = document.querySelector('.burger');
  let menu = document.querySelector('.header__nav');
  let menuLinks = document.querySelectorAll('.nav__link')
