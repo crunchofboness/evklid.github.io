@@ -1,6 +1,31 @@
 console.log("main.js loaded");
 console.log("contactForm:", document.getElementById("contactForm"));
 
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const payload = {
+    name: document.getElementById("formName").value.trim(),
+    email: document.getElementById("formEmail").value.trim(),
+    social: document.getElementById("formSocial").value.trim(),
+    message: document.getElementById("formMessage").value.trim(),
+  };
+
+  const res = await fetch("/.netlify/functions/sendTelegram", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await res.json();
+  if (data.ok) {
+    alert("Отправлено ✅");
+    e.target.reset();
+  } else {
+    alert("Ошибка: " + (data.error || "неизвестно"));
+  }
+});
+
 let tabsBtn = document.querySelectorAll('btn__item');
 let tabsItem = document.querySelectorAll('tabs-item');
 
@@ -17,6 +42,49 @@ document.querySelectorAll('.btn__item').forEach(function(tabsBtn){
     document.querySelector(`[data-target="${path}"]`).classList.add('tabs-item--active');
     });
   });
+
+
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  loop: true,
+
+  nextButton: '.swiper-button-next',
+  prevButton: '.swiper-button-prev',
+
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true,
+},
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+},
+
+autoplay: {
+  delay: 5000,
+  disableOnInteraction: false,
+},
+
+  speed:1000,
+
+  simulateTouch: true,
+
+  touchRatio: 1,
+
+  touchAngle:45,
+
+  grabCursor: true,
+
+ });
+
+ new Accordion('.accordion-list', {
+    elementClass: 'accordion',
+    triggerClass: 'accordion__control',
+    panelClass: 'accordion__content',
+    activeClass: 'accordion--active',
+ });
 
  let burger = document.querySelector('.burger');
  let menu = document.querySelector('.header__nav');
@@ -67,28 +135,5 @@ document.querySelectorAll('.btn__item').forEach(function(tabsBtn){
 
     })
 
-document.getElementById("contactForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
 
-  const payload = {
-    name: document.getElementById("formName").value.trim(),
-    email: document.getElementById("formEmail").value.trim(),
-    social: document.getElementById("formSocial").value.trim(),
-    message: document.getElementById("formMessage").value.trim(),
-  };
-
-  const res = await fetch("/.netlify/functions/sendTelegram", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-
-  const data = await res.json();
-  if (data.ok) {
-    alert("Отправлено ✅");
-    e.target.reset();
-  } else {
-    alert("Ошибка: " + (data.error || "неизвестно"));
-  }
-});
 
