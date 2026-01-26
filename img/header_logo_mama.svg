@@ -1,0 +1,46 @@
+<svg
+  width="220"
+  height="64"
+  viewBox="0 0 220 64"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Знак -->
+  <path
+    d="M32 4
+       C20 4 12 14 12 26
+       C12 40 22 56 32 60
+       C42 56 52 40 52 26
+       C52 14 44 4 32 4Z"
+    fill="#F4C6A8"
+  />
+
+  <!-- Сердце -->
+  <path
+    d="M32 30
+       C30 27 26 27 26 31
+       C26 35 32 38 32 38
+       C32 38 38 35 38 31
+       C38 27 34 27 32 30Z"
+    fill="#FFFFFF"
+  />
+
+  <!-- Точка-цветок -->
+  <circle cx="48" cy="10" r="3" fill="#F4C6A8" />
+  <circle cx="52" cy="14" r="3" fill="#F4C6A8" />
+  <circle cx="44" cy="14" r="3" fill="#F4C6A8" />
+  <circle cx="48" cy="18" r="3" fill="#F4C6A8" />
+
+  <!-- Текст -->
+  <text
+    x="72"
+    y="42"
+    fill="#E39F6F"
+    font-size="32"
+    font-weight="500"
+    font-family="Inter, Arial, sans-serif"
+    letter-spacing="0.5"
+  >
+    Я.МАМА
+  </text>
+</svg>
