@@ -1,3 +1,6 @@
+console.log("main.js loaded");
+console.log("contactForm:", document.getElementById("contactForm"));
+
 let tabsBtn = document.querySelectorAll('btn__item');
 let tabsItem = document.querySelectorAll('tabs-item');
 

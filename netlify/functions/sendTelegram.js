@@ -8,7 +8,7 @@ exports.handler = async (event) => {
   try {
     console.log("Raw body:", event.body);
 
-    const { name, phone, email, message } = JSON.parse(event.body || "{}");
+    const { name, email, social, message } = JSON.parse(event.body || "{}");
     console.log("Parsed payload:", { name, phone, email, hasMessage: !!message });
 
     const token = process.env.BOT_TOKEN;
