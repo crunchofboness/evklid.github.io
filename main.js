@@ -107,5 +107,28 @@ autoplay: {
 
     })
 
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
+  const payload = {
+    name: document.getElementById("formName").value.trim(),
+    email: document.getElementById("formEmail").value.trim(),
+    social: document.getElementById("formSocial").value.trim(),
+    message: document.getElementById("formMessage").value.trim(),
+  };
+
+  const res = await fetch("/.netlify/functions/sendTelegram", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await res.json();
+  if (data.ok) {
+    alert("Отправлено ✅");
+    e.target.reset();
+  } else {
+    alert("Ошибка: " + (data.error || "неизвестно"));
+  }
+});
 

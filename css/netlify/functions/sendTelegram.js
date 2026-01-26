@@ -13,8 +13,8 @@ export async function handler(event) {
     const text =
       `📝 Заявка с сайта\n` +
       `👤 Имя: ${name}\n` +
-      `📞 Телефон: ${phone}\n` +
-      `✉️ Email: ${email}\n` +
+      `Почта ${email}\n` +
+      `Социальная сеть: ${social}\n` +
       `💬 Сообщение: ${message}`;
 
     const token = process.env.BOT_TOKEN;
