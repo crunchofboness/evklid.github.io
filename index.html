@@ -178,15 +178,15 @@
       </div>
       <div class="footer__mid">
         <h3 class="footer__mid-title">Оставить заявку</h3>
-        <form action="" class="footer__mid-form form" id="contactForm">
-          <input type="text" class="footer__mid-input text-input" required placeholder="Фамилия, имя и отчество*" id="formName">
-          <input type="email" class="footer__mid-input email-input" required placeholder="E-mail*" id="formEmail">
-          <input type="text" class="footer__mid-input social-input" required placeholder="Telegram*" id="formSocial">
+        <form action="send.php" method="post" class="footer__mid-form form" id="contactForm">
+          <input type="text" name="name" class="footer__mid-input text-input" required placeholder="Фамилия, имя и отчество*" id="formName">
+          <input type="email" name="email" class="footer__mid-input email-input" required placeholder="E-mail*" id="formEmail">
+          <input type="text" name="social" class="footer__mid-input social-input" required placeholder="Telegram*" id="formSocial">
           <textarea name="massage" class="footer__mid-textarea" required placeholder="Сообщение" id="formMessage"></textarea>
           <div class="footer__mid-submit">
             <button type="submit" class="footer__mid-btn btn btn-reset">Отправить данные</button>
             <label for="agreement">
-              <input type="checkbox" id="agreement" required>
+              <input type="checkbox" id="agreement" name="agreement" required>
               Согласен на обработку данных
             </label>
           </div>
